@@ -15,7 +15,7 @@ export const ItemProvider = ({children}) => {
         if (item !== '') { // Effect still fires when state is created, check to make sure it isn't empty.
             const fetchData = (id) => {
                 const wikiResponse = axios.get(`https://prices.runescape.wiki/api/v1/osrs/latest?id=${id}`)
-                const volumeResponse = axios.get(`http://localhost:5000/api/item/${id}`)
+                const volumeResponse = axios.get(`https://aaron-quinn-the-grand-exchange.herokuapp.com/api/item/${id}`)
 
                 axios.all([wikiResponse, volumeResponse])
                 .then(
